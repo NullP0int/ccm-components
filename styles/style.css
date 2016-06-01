@@ -1,0 +1,267 @@
+body {
+    background-image: url("../img/binding_dark.png");
+    background-attachment: fixed;
+
+}
+
+
+
+* {
+
+}
+
+#page {
+
+}
+
+.page {
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 10px;
+    opacity: 0.95;
+}
+
+#header {
+
+}
+
+/*img {
+    width: 60%;
+    margin: 20px;
+} */
+
+p {
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+#header h1 {
+    margin: 5px;
+    color: #343434;
+    font-weight: bold;
+    font-family: 'Ultra', sans-serif;
+    font-size: 37px;
+    line-height: 43px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+}
+
+h2 {
+    margin: 5px;
+    color: #343434;
+    font-weight: bold;
+    font-family: 'Ultra', sans-serif;
+    font-size: 27px;
+    line-height: 43px;
+}
+
+#navigation {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;  /* Wichtig um den Abstand zwischen Navigation und Content ein zu halten */
+}
+
+#navigation li {
+    float: left;
+    border-right: 2px solid white;
+}
+
+
+#navigation a {
+    display: block;
+    padding: 8px;
+    background-color: #646464;
+    font-family: sans-serif;
+}
+
+#navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navigation li a:hover {
+    background-color: #1A1A1A;
+}
+
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #646464;
+    border: none;
+    border-radius: 10px;
+}
+
+#navigation .active {
+    background-color: #0D9437;
+}
+
+#content {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#content a {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    color: #0D9437;
+}
+
+#footer {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 16px;
+    background-color: #646464;
+    color: white;
+    font-family: sans-serif;
+}
+
+#buttonBar li {
+    float: left;
+    border: 1px solid white;
+}
+
+#buttonBar a {
+    display: block;
+    padding: 8px;
+    background-color: #0D9437;
+    font-family: sans-serif;
+}
+
+#buttonBar li a {
+    width: 80px;
+    display: block;
+    color: white;
+    text-align: center;
+
+    vertical-align: middle;
+    line-height: normal;
+
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#buttonBar ul {
+    list-style-type: none;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttonBar {
+    margin: 30px 50px 20px 50px;
+}
+
+#buttonBar li a:hover {
+    background-color: #1A1A1A;
+}
+
+#buttonBar .active {
+    background-color: #0D9437;
+}
+
+#buttonBar li #line { padding-left: 100%; }
+
+.code {
+    font-family: Arial;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+code {
+    font-family: Arial;
+    color: green;
+}
+
+.main li {
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+.main ul {
+    margin-left: 20px;
+}
+
+.eingerueckt {
+    padding-left: 20px;
+}
+
+
+/* Scale THING */
+
+@media screen and (max-width: 1450px) {
+    .page {
+        background-color: white;
+        width: 95%;
+        min-width: 750px;
+    }
+}
+
+/* end Scale THING */
+
+
+/* BEGIN SLIDESHOW */
+
+.container{
+    margin: auto;
+    width:680px;
+    height:350px;
+    padding:20px;
+    border:1px solid gray;
+    border-radius: 10px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    background: black;
+}
+.slide-wrapper{
+    overflow: hidden;
+}
+#slide{
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    padding:0;
+    left:0;
+}
+#slide li{
+    position:relative;
+    max-width: 100%;
+    float:left;
+    list-style: none;
+    left: 0;
+}
+
+/* END SLIDESHOW */
+
+input[type="text"] {
+    font-family: sans-serif;
+    size: 50px;
+    font-size: 1.0em;
+    width: 40%;
+}
+
+.button {
+    font-family: sans-serif;
+    font-size: 1.0em;
+}
+
+#googleMap {
+
+}

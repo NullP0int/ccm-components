@@ -1,0 +1,12 @@
+
+.ccm-calculator > .calculator.number {
+    width: 20px;
+    height: 20px;
+    background-color: #EED5FF;
+}
+
+.ccm-calculator > .calculator {
+    padding: 10px;
+    border: 1px solid;
+    border-collapse:  collapse;
+}
