@@ -6,71 +6,64 @@ ccm.component({
     name: 'calculator',
 
     config: {
-        style: [ ccm.load, 'styles/calculator.css' ],
+        html: [ ccm.store, { local: 'template.json' } ],
+        style: [ ccm.load, 'calculator.css' ]
     },
     
     Instance : function () {
 
         var self = this;
 
-
-        this.render = function ( callback ) {
+        self.render = function ( callback ) {
 
             var element = ccm.helper.element( self );
+            element.html(ccm.helper.html(self.html.get('main')));
 
-            element.html(
-                '<div class="calculator">' +
-                    '<textarea style="resize:none" readonly rows="4" id="result" cols="50"></textarea> <br>' +
-                    '<div class="inputbuttons">' +
-                        '<button class="sonstiges" id="clear">C</button><br>' +
-                        '<button class="number" id="button7">7</button> ' +
-                        '<button class="number" id="button8">8</button> ' +
-                        '<button class="number" id="button9">9</button> ' +
-                        '<button class="operation" id="buttonadd">+</button><br> ' +
-                        '<button class="number" id="button4">4</button> ' +
-                        '<button class="number" id="button5">5</button> ' +
-                        '<button class="number" id="button6">6</button> ' +
-                        '<button class="operation" id="buttonminus">-</button><br> ' +
-                        '<button class="number" id="button1">1</button> ' +
-                        '<button class="number" id="button2">2</button> ' +
-                        '<button class="number" id="button3">3</button> ' +
-                        '<button class="operation" id="buttonmultiply">*</button><br> ' +
-                        '<button class="number" id="button0">0</button> ' +
-                        '<button class="number" id="buttoncomma">.</button> ' +
-                        '<button class="number" id="buttonenter">=</button> ' +
-                        '<button class="operation" id="buttondevide">/</button><br> ' +
-                    '</div>' +
-                '</div>'
-            );
+            var textarea = ccm.helper.find(self, "#result");
 
-            var textarea = element.find('#result');
+            textarea.html("");
 
-            var btnzero = element.find('#button0');
-            var btnone = element.find('#button1');
-            var btntwo = element.find('#button2');
-            var btnthree = element.find('#button3');
-            var btnfour = element.find('#button4');
-            var btnfive = element.find('#button5');
-            var btnsix = element.find('#button6');
-            var btnseven = element.find('#button7');
-            var btneight = element.find('#button8');
-            var btnnine = element.find('#button9');
-            var btncomma = element.find('#buttoncomma');
+            var btnzero = ccm.helper.find(self, "#button0");
+            var btnone = ccm.helper.find(self, '#button1');
+            var btntwo = ccm.helper.find(self, '#button2');
+            var btnthree = ccm.helper.find(self, '#button3');
+            var btnfour = ccm.helper.find(self, '#button4');
+            var btnfive = ccm.helper.find(self, '#button5');
+            var btnsix = ccm.helper.find(self, '#button6');
+            var btnseven = ccm.helper.find(self, '#button7');
+            var btneight = ccm.helper.find(self, '#button8');
+            var btnnine = ccm.helper.find(self, '#button9');
+            var btncomma = ccm.helper.find(self, '#buttoncomma');
+            var btnans = ccm.helper.find(self, '#buttonans');
 
-            var btnclear = element.find('#clear');
-            var btnadd = element.find('#buttonadd');
-            var btnminus = element.find('#buttonminus');
-            var btnmultiply = element.find('#buttonmultiply');
-            var btndevide = element.find('#buttondevide');
-            var buttonenter = element.find('#buttonenter');
+            var btnclear = ccm.helper.find(self, '#clear');
+            var btnback = ccm.helper.find(self, '#back');
+            var btnadd = ccm.helper.find(self, '#buttonadd');
+            var btnminus = ccm.helper.find(self, '#buttonminus');
+            var btnmultiply = ccm.helper.find(self, '#buttonmultiply');
+            var btndevide = ccm.helper.find(self, '#buttondevide');
+            var btnenter = ccm.helper.find(self, '#buttonenter');
 
             var calculation = '';
+            var lastresult = null;
             var lhs = 0;
             var rhs = 0;
 
             // Button clear function
             btnclear.click(function() {
+                textareaclearAll()
+            });
+
+            btnback.click(function() {
+
+                if(calculation.toString().indexOf(' ', calculation.length - 1) > 0) {
+                    calculation = calculation.toString().substring(0, calculation.length - 3);
+                } else {
+                    calculation = calculation.toString().substring(0, calculation.length - 1);
+                }
+                
                 textareaclear();
+                textarea.html(calculation);
             });
 
             // Button zero function
@@ -141,30 +134,32 @@ ccm.component({
 
             // Button add function
             btnadd.click(function() {
-                calculation = calculation + ' + ';
-                textarea.append(' + ');
+                appendOperation('+');
             });
 
             // Button minus function
             btnminus.click(function() {
-                calculation = calculation + ' - ';
-                textarea.append(' - ');
+                appendOperation('-');
             });
 
             // Button multiply function
             btnmultiply.click(function() {
-                calculation = calculation + ' * ';
-                textarea.append(' * ');
+                appendOperation('*');
             });
 
             // Button devide function
             btndevide.click(function() {
-                calculation = calculation + ' / ';
-                textarea.append(' / ');
+                appendOperation('/');
+            });
+
+            btnans.click(function() {
+                textareaclear();
+                calculation = lastresult.toString();
+                textarea.append(calculation);
             });
 
             // Button enter function
-            buttonenter.click(function() {
+            btnenter.click(function() {
                 var textareastring = calculation + '\n\n = ' + calc_result(calculation);
                 textareaclear();
                 textarea.html(textareastring);
@@ -172,6 +167,17 @@ ccm.component({
 
 
             /* private functions */
+
+            function appendOperation(operation) {
+
+                if(calculation.toString().indexOf('+') > 0 || calculation.toString().indexOf('-', 1) > 0 || calculation.toString().indexOf('*', 1) > 0 || calculation.toString().indexOf('/', 1) > 0 ) {
+
+                } else {
+                    calculation = calculation + ' ' + operation + ' ';
+                    textarea.append(' ' + operation + ' ');
+                }
+
+            }
 
             function calc_result(completestring) {
                 var string = completestring.toString();
@@ -195,28 +201,37 @@ ccm.component({
                     result = devideoperation(lhs, rhs);
                 }
 
+                if(isNaN(result) == false) {
+                    lastresult = result;
+                    calculation = lastresult;
+                }
+
                 return result;
             }
 
-            function textareaclear() {
+            function textareaclearAll() {
                 calculation = '';
                 textarea.html(calculation);
             }
 
+            function textareaclear() {
+                textarea.html('');
+            }
+
             function addoperation(lhs, rhs) {
-                return lhs + rhs;
+                return ((lhs * 10) + (rhs * 10)) / 10;
             }
 
             function minusoperation(lhs, rhs) {
-                return lhs - rhs;
+                return ((lhs * 10) - (rhs * 10)) / 10;
             }
 
             function multiplyoperation(lhs, rhs) {
-                return lhs * rhs;
+                return ((lhs * 10) * (rhs * 10)) / 100;
             }
 
             function devideoperation(lhs, rhs) {
-                return lhs / rhs;
+                return ((lhs * 10) / (rhs * 10));
             }
 
         }
