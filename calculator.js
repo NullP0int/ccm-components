@@ -35,6 +35,7 @@ ccm.component({
             var btnnine = ccm.helper.find(self, '#button9');
             var btncomma = ccm.helper.find(self, '#buttoncomma');
             var btnans = ccm.helper.find(self, '#buttonans');
+            var btnpreminus = ccm.helper.find(self, '#buttonpreminus');
 
             var btnclear = ccm.helper.find(self, '#clear');
             var btnback = ccm.helper.find(self, '#back');
@@ -156,6 +157,11 @@ ccm.component({
                 textareaclear();
                 calculation = lastresult.toString();
                 textarea.append(calculation);
+            });
+
+            btnpreminus.click(function() {
+                calculation = calculation + '-';
+                textarea.append('-');
             });
 
             // Button enter function

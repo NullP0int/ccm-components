@@ -48,7 +48,7 @@
     font-size: 20px;
     text-align: right;
     height: 130px;
-    width: 94%;
+    width: 90%;
     resize: none;
 }
 
@@ -60,5 +60,5 @@
 }
 
 .ccm-calculator {
-    width: 280px;
+    width: 290px;
 }
