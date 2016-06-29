@@ -1,0 +1,64 @@
+
+.ccm-calculator button.number {
+    margin: 5px;
+    padding: 0px;
+    border-width: 6px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.ccm-calculator button.operation {
+    margin: 5px;
+    margin-left: 15px;
+    border-width: 6px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    float: right;
+}
+
+.ccm-calculator button.sonstiges {
+    margin: 5px;
+    /* padding: 10px; */
+    border-width: 6px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.ccm-calculator #result {
+    margin: 5px;
+    border-width: 6px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    text-align: right;
+    height: 130px;
+    width: 90%;
+    resize: none;
+}
+
+.ccm-calculator .calculator {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: darkgray;
+}
+
+.ccm-calculator {
+    width: 290px;
+}

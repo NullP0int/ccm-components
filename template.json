@@ -1,0 +1,160 @@
+{
+  "main": {
+    "tag": "div",
+    "class": "main",
+    "inner": [
+      {
+        "tag": "div",
+        "class": "calculator",
+        "inner": [
+          {
+            "tag": "textarea",
+            "id": "result",
+            "inner": "%text%"
+          },
+          {
+            "tag": "div",
+            "class": "inputbuttons",
+            "inner": [
+              {
+                "tag": "button",
+                "class": "sonstiges",
+                "id": "clear",
+                "inner": "C"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "back",
+                "inner": "<-"
+              },
+              {
+                "tag": "br"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button7",
+                "inner": "7"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button8",
+                "inner": "8"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button9",
+                "inner": "9"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "buttonadd",
+                "inner": "+"
+              },
+              {
+                "tag": "br"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button4",
+                "inner": "4"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button5",
+                "inner": "5"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button6",
+                "inner": "6"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "buttonminus",
+                "inner": "-"
+              },
+              {
+                "tag": "br"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button1",
+                "inner": "1"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button2",
+                "inner": "2"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button3",
+                "inner": "3"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "buttonmultiply",
+                "inner": "*"
+              },
+              {
+                "tag": "br"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "button0",
+                "inner": "0"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "buttoncomma",
+                "inner": "."
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "buttonpreminus",
+                "inner": "(-)"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "buttondevide",
+                "inner": "/"
+              },
+              {
+                "tag": "br"
+              },
+              {
+                "tag": "button",
+                "class": "number",
+                "id": "buttonans",
+                "inner": "Ans"
+              },
+              {
+                "tag": "button",
+                "class": "operation",
+                "id": "buttonenter",
+                "inner": "="
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
